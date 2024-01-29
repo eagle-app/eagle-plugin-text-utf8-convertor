@@ -1,0 +1,90 @@
+{
+    "manifest": {
+        "app": {
+            "name": "一键编码转换"
+        }
+    },
+    "header": {
+        "thumbtack": {
+            "isAlwaysOnTop": "置顶窗口",
+            "isNotAlwaysOnTop": "取消置顶"
+        },
+        "dialog": {
+            "exit": {
+                "title": "退出插件?",
+                "description": "退出后，任务将停止。未完成压缩的图片将不再压缩。",
+                "cancel": "取消",
+                "ok": "确认退出"
+            }
+        }
+    },
+    "main": {
+        "table": {
+            "thead": {
+                "name": "文件名",
+                "ext": "格式",
+                "encoding": "原编码",
+                "content": "原内容",
+                "convertedContent": "转码后內容"
+            },
+            "contextMenu": {
+                "deleteSuccessful": "删除已完成"
+            }
+        },
+        "empty": {
+            "title": "新增图片",
+            "content": "请先从 Eagle 新增图片，再进行压缩。支持 bmp / jpg / png / webp / avif。"
+        },
+        "process": {
+            "completed": "转换完成，成功: {{success}}，失败: {{failed}}。可在 Eagle 中选择其他图片继续压缩。"
+        },
+        "setting": {
+            "title": "压缩设置",
+            "format": "格式",
+            "algorithm": "算法",
+            "quality": "品质",
+            "lossy": "有损",
+            "noLossy": "无损",
+            "save": "保存设置"
+        },
+        "dialog": {
+            "success": {
+                "title": "压缩完成！",
+                "description": "已经压缩 <span style='color: var(--color-positive)'>{{ count }}</span> 个图片。你可以在 Eagle 中选择其他图片继续压缩。",
+                "cancel": "关闭",
+                "ok": "确认"
+            }
+        }
+    },
+    "footer": {
+        "setting": {
+            "title": "压缩设置",
+            "hint": "点击这里进行压缩设置"
+        },
+        "convert": {
+            "isConverting": "压缩中...",
+            "title": "转换编码"
+        }
+    },
+    "component": {
+        "dropZone": {
+            "tip": "将文件拖放至此添加"
+        }
+    },
+    "error": {
+        "equalExtension": "副檔名相同",
+
+        "imageLoadError": "图片加载失败",
+
+        "fileExtensionNotSupported": "不支持的图片格式",
+
+        "fileSizeNotSupported": "文件尺寸不支持",
+        "resolutionNotSupported": "图像尺寸超出限制",
+
+        "fileResolutionIsNotEqual": "文件分辨率不一致",
+        "fileHistogramsAbnormality": "文件直方图异常",
+        "fileSizeAbnormality": "文件尺寸异常",
+
+        "failedToFetch": "文件访问失败"
+    }
+}

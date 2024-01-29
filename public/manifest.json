@@ -1,0 +1,21 @@
+{
+    "id": "4ab1b03c-29f2-415c-ac90-0d764f108359",
+    "version": "1.0.2",
+    "platform": "all",
+    "arch": "all",
+    "name": "{{manifest.app.name}}",
+    "logo": "./logo.png",
+    "keywords": ["compressor", "image"],
+    "fallbackLanguage": "en",
+    "languages": ["en", "zh_TW", "zh_CN", "ja_JP", "ko_KR", "es_ES", "de_DE", "ru_RU"],
+    "main": {
+        "frame": false,
+        "vibrancy": true,
+        "url": "index.html",
+        "width": 960,
+        "height": 640,
+        "minWidth": 800,
+        "minHeight": 600,
+        "opacity": 1
+    }
+}

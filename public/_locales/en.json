@@ -1,0 +1,89 @@
+{
+    "manifest": {
+        "app": {
+            "name": "Encoder"
+        }
+    },
+    "header": {
+        "thumbtack": {
+            "isAlwaysOnTop": "Pin Window",
+            "isNotAlwaysOnTop": "Unpin"
+        },
+        "dialog": {
+            "exit": {
+                "title": "Exit Plugin?",
+                "description": "Exiting will stop the task. Uncompressed images will no longer be compressed.",
+                "cancel": "Cancel",
+                "ok": "Confirm Exit"
+            }
+        }
+    },
+    "main": {
+        "table": {
+            "thead": {
+                "name": "File Name",
+                "ext": "Format",
+                "size": "Original Size",
+                "convertedSize": "Compressed Size"
+            },
+            "contextMenu": {
+                "deleteSuccessful": "Deletion Successful"
+            }
+        },
+        "empty": {
+            "title": "Add Images",
+            "content": "Please add images from Eagle before compressing. Supported formats: bmp / jpg / png / webp / avif."
+        },
+        "process": {
+            "completed": "Conversion completed. Success: {{success}}, Failure: {{failed}}. You can select other images in Eagle to continue compression."
+        },
+        "setting": {
+            "title": "Compression Settings",
+            "format": "Format",
+            "algorithm": "Algorithm",
+            "quality": "Quality",
+            "lossy": "Lossy",
+            "noLossy": "Lossless",
+            "save": "Save Settings"
+        },
+        "dialog": {
+            "success": {
+                "title": "Compression Completed!",
+                "description": "Successfully compressed <span style='color: var(--color-positive)'>{{ count }}</span> images. You can select other images in Eagle to continue compression.",
+                "cancel": "Close",
+                "ok": "Confirm"
+            }
+        }
+    },
+    "footer": {
+        "setting": {
+            "title": "Compression Settings",
+            "hint": "Click here for compression settings"
+        },
+        "convert": {
+            "isConverting": "Compressing...",
+            "title": "Compressing Images"
+        }
+    },
+    "component": {
+        "dropZone": {
+            "tip": "Drag and drop files here to add"
+        }
+    },
+    "error": {
+        "equalExtension": "Same File Extension",
+
+        "imageLoadError": "Failed to Load Image",
+
+        "fileExtensionNotSupported": "Unsupported Image Format",
+
+        "fileSizeNotSupported": "Unsupported File Size",
+        "resolutionNotSupported": "Image size exceeds the limit",
+
+        "fileResolutionIsNotEqual": "File resolutions are not consistent",
+        "fileHistogramsAbnormality": "File histogram abnormality",
+        "fileSizeAbnormality": "File size abnormality",
+
+        "failedToFetch": "Failed to access file"
+    }
+}

@@ -1,0 +1,89 @@
+{
+    "manifest": {
+        "app": {
+            "name": "이미지 일괄 압축"
+        }
+    },
+    "header": {
+        "thumbtack": {
+            "isAlwaysOnTop": "항상 위에 고정",
+            "isNotAlwaysOnTop": "고정 해제"
+        },
+        "dialog": {
+            "exit": {
+                "title": "플러그인 종료?",
+                "description": "종료하면 작업이 중단됩니다. 압축되지 않은 이미지는 더 이상 압축되지 않습니다.",
+                "cancel": "취소",
+                "ok": "종료 확인"
+            }
+        }
+    },
+    "main": {
+        "table": {
+            "thead": {
+                "name": "파일 이름",
+                "ext": "형식",
+                "size": "원본 크기",
+                "convertedSize": "압축 후 크기"
+            },
+            "contextMenu": {
+                "deleteSuccessful": "삭제 완료"
+            }
+        },
+        "empty": {
+            "title": "이미지 추가",
+            "content": "먼저 Eagle에서 이미지를 추가한 후 압축하십시오. bmp / jpg / png / webp / avif를 지원합니다."
+        },
+        "process": {
+            "completed": "변환 완료, 성공: {{success}}개, 실패: {{failed}}개. Eagle에서 다른 이미지를 선택하여 계속 압축할 수 있습니다."
+        },
+        "setting": {
+            "title": "압축 설정",
+            "format": "형식",
+            "algorithm": "알고리즘",
+            "quality": "품질",
+            "lossy": "손실",
+            "noLossy": "무손실",
+            "save": "설정 저장"
+        },
+        "dialog": {
+            "success": {
+                "title": "압축 완료!",
+                "description": "<span style='color: var(--color-positive)'>{{ count }}</span>개의 이미지가 이미 압축되었습니다. Eagle에서 다른 이미지를 선택하여 계속 압축할 수 있습니다.",
+                "cancel": "닫기",
+                "ok": "확인"
+            }
+        }
+    },
+    "footer": {
+        "setting": {
+            "title": "압축 설정",
+            "hint": "여기를 클릭하여 압축 설정을 진행하세요."
+        },
+        "convert": {
+            "isConverting": "압축 중...",
+            "title": "이미지 압축"
+        }
+    },
+    "component": {
+        "dropZone": {
+            "tip": "여기에 파일을 끌어다 놓아 추가하세요."
+        }
+    },
+    "error": {
+        "equalExtension": "확장자가 동일함",
+
+        "imageLoadError": "이미지 로드 실패",
+
+        "fileExtensionNotSupported": "지원되지 않는 이미지 형식",
+
+        "fileSizeNotSupported": "파일 크기가 지원되지 않습니다.",
+        "resolutionNotSupported": "이미지 크기가 제한을 초과합니다.",
+
+        "fileResolutionIsNotEqual": "파일 해상도가 일치하지 않음",
+        "fileHistogramsAbnormality": "파일 히스토그램 이상",
+        "fileSizeAbnormality": "파일 크기 이상",
+
+        "failedToFetch": "파일 액세스 실패"
+    }
+}

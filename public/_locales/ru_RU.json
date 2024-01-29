@@ -1,0 +1,89 @@
+{
+    "manifest": {
+        "app": {
+            "name": "Однокнопочное сжатие изображений"
+        }
+    },
+    "header": {
+        "thumbtack": {
+            "isAlwaysOnTop": "Всегда поверх окна",
+            "isNotAlwaysOnTop": "Отменить поверхность"
+        },
+        "dialog": {
+            "exit": {
+                "title": "Выйти из плагина?",
+                "description": "После выхода задача будет остановлена. Несжатые изображения больше не будут сжиматься.",
+                "cancel": "Отмена",
+                "ok": "Подтвердить выход"
+            }
+        }
+    },
+    "main": {
+        "table": {
+            "thead": {
+                "name": "Имя файла",
+                "ext": "Формат",
+                "size": "Исходный размер",
+                "convertedSize": "Размер после сжатия"
+            },
+            "contextMenu": {
+                "deleteSuccessful": "Удаление завершено"
+            }
+        },
+        "empty": {
+            "title": "Добавить изображение",
+            "content": "Сначала добавьте изображение из Eagle, затем сжимайте. Поддерживаемые форматы: bmp / jpg / png / webp / avif."
+        },
+        "process": {
+            "completed": "Преобразование завершено, успешно: {{success}}, неудачно: {{failed}}. Вы можете выбрать другие изображения в Eagle для продолжения сжатия."
+        },
+        "setting": {
+            "title": "Настройки сжатия",
+            "format": "Формат",
+            "algorithm": "Алгоритм",
+            "quality": "Качество",
+            "lossy": "С потерей",
+            "noLossy": "Без потерь",
+            "save": "Сохранить настройки"
+        },
+        "dialog": {
+            "success": {
+                "title": "Сжатие завершено!",
+                "description": "Было сжато <span style='color: var(--color-positive)'>{{ count }}</span> изображений. Вы можете выбрать другие изображения в Eagle для продолжения сжатия.",
+                "cancel": "Закрыть",
+                "ok": "Подтвердить"
+            }
+        }
+    },
+    "footer": {
+        "setting": {
+            "title": "Настройки сжатия",
+            "hint": "Нажмите здесь для настройки сжатия"
+        },
+        "convert": {
+            "isConverting": "Идет сжатие...",
+            "title": "Сжатие изображения"
+        }
+    },
+    "component": {
+        "dropZone": {
+            "tip": "Перетащите файлы сюда для добавления"
+        }
+    },
+    "error": {
+        "equalExtension": "Одинаковое расширение файла",
+
+        "imageLoadError": "Ошибка загрузки изображения",
+
+        "fileExtensionNotSupported": "Неподдерживаемый формат изображения",
+
+        "fileSizeNotSupported": "Неподдерживаемый размер файла",
+        "resolutionNotSupported": "Размер изображения превышает лимит",
+
+        "fileResolutionIsNotEqual": "Разрешение файла не совпадает",
+        "fileHistogramsAbnormality": "Аномалии в гистограмме файла",
+        "fileSizeAbnormality": "Аномалии размера файла",
+
+        "failedToFetch": "Ошибка доступа к файлу"
+    }
+}

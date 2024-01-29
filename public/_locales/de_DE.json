@@ -1,0 +1,89 @@
+{
+    "manifest": {
+        "app": {
+            "name": "Bildkomprimierung mit einem Klick"
+        }
+    },
+    "header": {
+        "thumbtack": {
+            "isAlwaysOnTop": "Immer im Vordergrund",
+            "isNotAlwaysOnTop": "Im Vordergrund aufheben"
+        },
+        "dialog": {
+            "exit": {
+                "title": "Plugin verlassen?",
+                "description": "Nach dem Verlassen wird die Aufgabe gestoppt. Nicht komprimierte Bilder werden nicht mehr komprimiert.",
+                "cancel": "Abbrechen",
+                "ok": "Bestätigung zum Verlassen"
+            }
+        }
+    },
+    "main": {
+        "table": {
+            "thead": {
+                "name": "Dateiname",
+                "ext": "Format",
+                "size": "Ursprüngliche Größe",
+                "convertedSize": "Komprimierte Größe"
+            },
+            "contextMenu": {
+                "deleteSuccessful": "Erfolgreich gelöscht"
+            }
+        },
+        "empty": {
+            "title": "Bilder hinzufügen",
+            "content": "Bitte füge zuerst Bilder von Eagle hinzu und komprimiere sie dann. Unterstützte Formate: bmp / jpg / png / webp / avif."
+        },
+        "process": {
+            "completed": "Konvertierung abgeschlossen, Erfolgreich: {{success}}, Fehlgeschlagen: {{failed}}. Sie können in Eagle andere Bilder zum Komprimieren auswählen."
+        },
+        "setting": {
+            "title": "Komprimierungseinstellungen",
+            "format": "Format",
+            "algorithm": "Algorithmus",
+            "quality": "Qualität",
+            "lossy": "Mit Verlust",
+            "noLossy": "Ohne Verlust",
+            "save": "Einstellungen speichern"
+        },
+        "dialog": {
+            "success": {
+                "title": "Komprimierung abgeschlossen!",
+                "description": "Es wurden <span style='color: var(--color-positive)'>{{ count }}</span> Bilder komprimiert. Sie können in Eagle andere Bilder auswählen, um fortzufahren.",
+                "cancel": "Schließen",
+                "ok": "Bestätigen"
+            }
+        }
+    },
+    "footer": {
+        "setting": {
+            "title": "Komprimierungseinstellungen",
+            "hint": "Klicken Sie hier, um die Komprimierungseinstellungen vorzunehmen"
+        },
+        "convert": {
+            "isConverting": "Komprimierung läuft...",
+            "title": "Bilder komprimieren"
+        }
+    },
+    "component": {
+        "dropZone": {
+            "tip": "Dateien hier ablegen, um sie hinzuzufügen"
+        }
+    },
+    "error": {
+        "equalExtension": "Gleiche Dateierweiterung",
+
+        "imageLoadError": "Fehler beim Laden des Bildes",
+
+        "fileExtensionNotSupported": "Nicht unterstütztes Bildformat",
+
+        "fileSizeNotSupported": "Dateigröße nicht unterstützt",
+        "resolutionNotSupported": "Bildgröße überschreitet die Grenze",
+
+        "fileResolutionIsNotEqual": "Dateiauflösung ist nicht gleich",
+        "fileHistogramsAbnormality": "Abnormale Dateihistogramme",
+        "fileSizeAbnormality": "Abnormale Dateigröße",
+
+        "failedToFetch": "Fehler beim Zugriff auf die Datei"
+    }
+}
