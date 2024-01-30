@@ -12,7 +12,7 @@
         "dialog": {
             "exit": {
                 "title": "退出插件?",
-                "description": "退出后，任务将停止。未完成压缩的图片将不再压缩。",
+                "description": "退出后，任务将停止。未完成转码的文本文件将不再转档。",
                 "cancel": "取消",
                 "ok": "确认退出"
             }
@@ -32,37 +32,24 @@
             }
         },
         "empty": {
-            "title": "新增图片",
-            "content": "请先从 Eagle 新增图片，再进行压缩。支持 bmp / jpg / png / webp / avif。"
+            "title": "新增文本文件",
+            "content": "请先在Eagle中新增文本文件，然后进行转码。"
         },
         "process": {
-            "completed": "转换完成，成功: {{success}}，失败: {{failed}}。可在 Eagle 中选择其他图片继续压缩。"
-        },
-        "setting": {
-            "title": "压缩设置",
-            "format": "格式",
-            "algorithm": "算法",
-            "quality": "品质",
-            "lossy": "有损",
-            "noLossy": "无损",
-            "save": "保存设置"
+            "completed": "转换完成，成功：{{success}}，失败：{{failed}}。您可以在Eagle中选择其他文本文件继续转码。"
         },
         "dialog": {
             "success": {
-                "title": "压缩完成！",
-                "description": "已经压缩 <span style='color: var(--color-positive)'>{{ count }}</span> 个图片。你可以在 Eagle 中选择其他图片继续压缩。",
+                "title": "转码完成！",
+                "description": "已经转码 <span style='color: var(--color-positive)'>{{ count }}</span> 个文字档。你可以在 Eagle 中选择其他文字档继续转码。",
                 "cancel": "关闭",
                 "ok": "确认"
             }
         }
     },
     "footer": {
-        "setting": {
-            "title": "压缩设置",
-            "hint": "点击这里进行压缩设置"
-        },
         "convert": {
-            "isConverting": "压缩中...",
+            "isConverting": "转码中...",
             "title": "转换编码"
         }
     },
@@ -74,17 +61,6 @@
     "error": {
         "equalExtension": "副檔名相同",
 
-        "imageLoadError": "图片加载失败",
-
-        "fileExtensionNotSupported": "不支持的图片格式",
-
-        "fileSizeNotSupported": "文件尺寸不支持",
-        "resolutionNotSupported": "图像尺寸超出限制",
-
-        "fileResolutionIsNotEqual": "文件分辨率不一致",
-        "fileHistogramsAbnormality": "文件直方图异常",
-        "fileSizeAbnormality": "文件尺寸异常",
-
-        "failedToFetch": "文件访问失败"
+        "fileExtensionNotSupported": "不支持的文字档格式"
     }
 }

@@ -12,7 +12,7 @@
         "dialog": {
             "exit": {
                 "title": "Plugin verlassen?",
-                "description": "Nach dem Verlassen wird die Aufgabe gestoppt. Nicht komprimierte Bilder werden nicht mehr komprimiert.",
+                "description": "Nach dem Verlassen wird die Aufgabe gestoppt. Unfertige Textdateien werden nicht mehr konvertiert.",
                 "cancel": "Abbrechen",
                 "ok": "Bestätigung zum Verlassen"
             }
@@ -23,46 +23,34 @@
             "thead": {
                 "name": "Dateiname",
                 "ext": "Format",
-                "size": "Ursprüngliche Größe",
-                "convertedSize": "Komprimierte Größe"
+                "encoding": "Ursprünglicher Code",
+                "content": "Originalinhalt",
+                "convertedContent": "Inhalt nach der Kodierung"
             },
             "contextMenu": {
                 "deleteSuccessful": "Erfolgreich gelöscht"
             }
         },
         "empty": {
-            "title": "Bilder hinzufügen",
-            "content": "Bitte füge zuerst Bilder von Eagle hinzu und komprimiere sie dann. Unterstützte Formate: bmp / jpg / png / webp / avif."
+            "title": "Textdatei hinzufügen",
+            "content": "Bitte fügen Sie zuerst eine Textdatei von Eagle hinzu und führen Sie dann die Umwandlung durch."
         },
         "process": {
-            "completed": "Konvertierung abgeschlossen, Erfolgreich: {{success}}, Fehlgeschlagen: {{failed}}. Sie können in Eagle andere Bilder zum Komprimieren auswählen."
-        },
-        "setting": {
-            "title": "Komprimierungseinstellungen",
-            "format": "Format",
-            "algorithm": "Algorithmus",
-            "quality": "Qualität",
-            "lossy": "Mit Verlust",
-            "noLossy": "Ohne Verlust",
-            "save": "Einstellungen speichern"
+            "completed": "Konvertierung abgeschlossen, Erfolg: {{success}}, Fehler: {{failed}}. Sie können in Eagle eine andere Textdatei auswählen, um die Konvertierung fortzusetzen."
         },
         "dialog": {
             "success": {
-                "title": "Komprimierung abgeschlossen!",
-                "description": "Es wurden <span style='color: var(--color-positive)'>{{ count }}</span> Bilder komprimiert. Sie können in Eagle andere Bilder auswählen, um fortzufahren.",
+                "title": "Transcodierung abgeschlossen!",
+                "description": "<span style='color: var(--color-positive)'>{{ count }}</span> Textdateien wurden bereits konvertiert. Sie können in Eagle andere Textdateien auswählen, um die Konvertierung fortzusetzen.",
                 "cancel": "Schließen",
                 "ok": "Bestätigen"
             }
         }
     },
     "footer": {
-        "setting": {
-            "title": "Komprimierungseinstellungen",
-            "hint": "Klicken Sie hier, um die Komprimierungseinstellungen vorzunehmen"
-        },
         "convert": {
-            "isConverting": "Komprimierung läuft...",
-            "title": "Bilder komprimieren"
+            "isConverting": "Transcodierung...",
+            "title": "Encoding ändern"
         }
     },
     "component": {
@@ -73,17 +61,7 @@
     "error": {
         "equalExtension": "Gleiche Dateierweiterung",
 
-        "imageLoadError": "Fehler beim Laden des Bildes",
+        "fileExtensionNotSupported": "Nicht unterstütztes Textdateiformat"
 
-        "fileExtensionNotSupported": "Nicht unterstütztes Bildformat",
-
-        "fileSizeNotSupported": "Dateigröße nicht unterstützt",
-        "resolutionNotSupported": "Bildgröße überschreitet die Grenze",
-
-        "fileResolutionIsNotEqual": "Dateiauflösung ist nicht gleich",
-        "fileHistogramsAbnormality": "Abnormale Dateihistogramme",
-        "fileSizeAbnormality": "Abnormale Dateigröße",
-
-        "failedToFetch": "Fehler beim Zugriff auf die Datei"
     }
 }

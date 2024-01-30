@@ -16,28 +16,6 @@ export default class {
 
         this.tempFolder = `${__dirname}/temp/`;
 
-        this.setting = {
-            jpg: {
-                algorithm: 'jpegtran',
-                quality: 90
-            },
-            png: {
-                algorithm: 'optipng',
-                quality: 90
-            },
-            gif: {
-                algorithm: 'gifsicle',
-                quality: 90
-            },
-            webp: {
-                algorithm: 'cwebp',
-                quality: 90
-            },
-            svg: {
-                algorithm: 'svgo'
-            }
-        };
-
         this.tempFolder = `${__dirname}/temp/`;
         Encoder.createTempFolder(this.tempFolder);
     }
@@ -61,6 +39,7 @@ export default class {
         const async = require('async');
         const queue = async.queue(async (task, callback) => {
             try {
+                await determineFileExtension(task.ext);
                 const convertBuffer = await Encoder.encode({
                     src: task.filePath,
                     toCharset: 'UTF-8'
@@ -91,13 +70,8 @@ export default class {
                 eagle.log.info(`start encoding #${task.id} : ${task.name}.${task.ext}`);
                 this.currentProcessIndex++;
                 try {
-                    if (
-                        !['txt'].includes(
-                            task.ext.toLowerCase()
-                        )
-                    )
-                        throw 'file extension not supported';
-
+                    
+                    await determineFileExtension(task.ext);
 
                     if (task.encoding.encoding === 'UTF-8') {
                         return null;
@@ -112,15 +86,15 @@ export default class {
                         `${this.tempFolder}/${id}.${ext}`
                     );
 
-                    fs.writeFileSync(outputFilePath, task.convertContent);
+                    await fs.promises.writeFile(outputFilePath, task.convertContent);
 
                     if (!fs.existsSync(outputFilePath)) {
-                        throw "File not found, output error", "fileNotFound";
+                        throw "File not found, output error";
                     }
 
                     let convertedEncoding = await Encoder.getEncoding(outputFilePath);
                     if (convertedEncoding.encoding !== "UTF-8") {
-                        throw "Encoding error", "encodingError";
+                        throw "Encoding error";
                     }
 
                     const item = await eagle.item.getById(task.id);
@@ -142,4 +116,13 @@ export default class {
     static getEncoding(src) {
         return Encoder.getEncoding(src);
     }
+}
+
+async function determineFileExtension(ext){
+    if (
+        !['txt'].includes(
+            ext.toLowerCase()
+        )
+    )
+        throw 'file extension not supported';
 }

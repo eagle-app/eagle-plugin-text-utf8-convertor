@@ -12,7 +12,7 @@
         "dialog": {
             "exit": {
                 "title": "退出插件?",
-                "description": "退出後，任務將停止。未完成壓縮的圖片將不再壓縮。",
+                "description": "退出後，任務將停止。未完成轉碼的文字檔將不再轉檔。",
                 "cancel": "取消",
                 "ok": "確認退出"
             }
@@ -23,46 +23,34 @@
             "thead": {
                 "name": "檔案名",
                 "ext": "格式",
-                "size": "原大小",
-                "convertedSize": "壓縮後大小"
+                "encoding": "原編碼",
+                "content": "原内容",
+                "convertedContent": "轉碼後內容"
             },
             "contextMenu": {
                 "deleteSuccessful": "刪除已完成"
             }
         },
         "empty": {
-            "title": "新增圖片",
-            "content": "請先從 Eagle 新增圖片，再進行壓縮。支援 bmp / jpg / png / webp / avif。"
+            "title": "新增文字檔",
+            "content": "請先從 Eagle 新增文字檔，再進行轉碼。"
         },
         "process": {
-            "completed": "轉換完成，成功: {{success}}，失敗: {{failed}}。可在Eagle中選擇其他圖片繼續壓縮。"
-        },
-        "setting": {
-            "title": "壓縮設置",
-            "format": "格式",
-            "algorithm": "演算法",
-            "quality": "品質",
-            "lossy": "有損",
-            "noLossy": "無損",
-            "save": "保存設置"
+            "completed": "轉換完成，成功: {{success}}，失敗: {{failed}}。可在Eagle中選擇其他文字檔繼續轉碼。"
         },
         "dialog": {
             "success": {
-                "title": "壓縮完成！",
-                "description": "已經壓縮 <span style='color: var(--color-positive)'>{{ count }}</span> 個圖片。你可以在 Eagle 中選取其它圖片繼續壓縮。",
+                "title": "轉碼完成！",
+                "description": "已經轉碼 <span style='color: var(--color-positive)'>{{ count }}</span> 個文字檔。你可以在 Eagle 中選取其它文字檔繼續轉碼。",
                 "cancel": "關閉",
                 "ok": "確認"
             }
         }
     },
     "footer": {
-        "setting": {
-            "title": "壓縮設置",
-            "hint": "點擊這裡進行壓縮設置"
-        },
         "convert": {
-            "isConverting": "壓縮中...",
-            "title": "壓縮圖片"
+            "isConverting": "轉碼中...",
+            "title": "轉換編碼"
         }
     },
     "component": {
@@ -71,19 +59,8 @@
         }
     },
     "error": {
-        "equalExtension": "副檔名相同",
+        "equalExtension": "副檔名相同",        
 
-        "imageLoadError": "圖片加載失敗",
-
-        "fileExtensionNotSupported": "不支持的圖片格式",
-
-        "fileSizeNotSupported": "檔案尺寸不支持",
-        "resolutionNotSupported": "圖像尺寸超出限制",
-
-        "fileResolutionIsNotEqual": "檔案解析度不一致",
-        "fileHistogramsAbnormality": "檔案直方圖異常",
-        "fileSizeAbnormality": "檔案尺寸異常",
-
-        "failedToFetch": "檔案存取失敗"
+        "fileExtensionNotSupported": "不支持的文字檔格式"
     }
 }

@@ -12,7 +12,7 @@
         "dialog": {
             "exit": {
                 "title": "Exit Plugin?",
-                "description": "Exiting will stop the task. Uncompressed images will no longer be compressed.",
+                "description": "After exiting, the task will stop. Unfinished transcoding text files will no longer be converted.",
                 "cancel": "Cancel",
                 "ok": "Confirm Exit"
             }
@@ -23,46 +23,34 @@
             "thead": {
                 "name": "File Name",
                 "ext": "Format",
-                "size": "Original Size",
-                "convertedSize": "Compressed Size"
+                "encoding": "Original encoding",
+                "content": "Original content",
+                "convertedContent": "Content after transcoding"
             },
             "contextMenu": {
                 "deleteSuccessful": "Deletion Successful"
             }
         },
         "empty": {
-            "title": "Add Images",
-            "content": "Please add images from Eagle before compressing. Supported formats: bmp / jpg / png / webp / avif."
+            "title": "Add Text File",
+            "content": "Please first add a text file from Eagle, then proceed with transcoding."
         },
         "process": {
-            "completed": "Conversion completed. Success: {{success}}, Failure: {{failed}}. You can select other images in Eagle to continue compression."
-        },
-        "setting": {
-            "title": "Compression Settings",
-            "format": "Format",
-            "algorithm": "Algorithm",
-            "quality": "Quality",
-            "lossy": "Lossy",
-            "noLossy": "Lossless",
-            "save": "Save Settings"
+            "completed": "Conversion completed, success: {{success}}, failed: {{failed}}. You can choose another text file in Eagle to continue transcoding."
         },
         "dialog": {
             "success": {
-                "title": "Compression Completed!",
-                "description": "Successfully compressed <span style='color: var(--color-positive)'>{{ count }}</span> images. You can select other images in Eagle to continue compression.",
+                "title": "Transcoding completed!",
+                "description": "Converted <span style='color: var(--color-positive)'>{{ count }}</span> text files. You can select other text files in Eagle to continue the conversion.",
                 "cancel": "Close",
                 "ok": "Confirm"
             }
         }
     },
     "footer": {
-        "setting": {
-            "title": "Compression Settings",
-            "hint": "Click here for compression settings"
-        },
         "convert": {
-            "isConverting": "Compressing...",
-            "title": "Compressing Images"
+            "isConverting": "Transcoding...",
+            "title": "Change encoding"
         }
     },
     "component": {
@@ -73,17 +61,6 @@
     "error": {
         "equalExtension": "Same File Extension",
 
-        "imageLoadError": "Failed to Load Image",
-
-        "fileExtensionNotSupported": "Unsupported Image Format",
-
-        "fileSizeNotSupported": "Unsupported File Size",
-        "resolutionNotSupported": "Image size exceeds the limit",
-
-        "fileResolutionIsNotEqual": "File resolutions are not consistent",
-        "fileHistogramsAbnormality": "File histogram abnormality",
-        "fileSizeAbnormality": "File size abnormality",
-
-        "failedToFetch": "Failed to access file"
+        "fileExtensionNotSupported": "Unsupported text file format"
     }
 }

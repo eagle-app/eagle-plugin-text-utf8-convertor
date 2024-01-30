@@ -29,7 +29,7 @@ module.exports = class {
 
             eagle.log.info('convert txt Path:' + input);
 
-            let buffer = fs.readFileSync(input);
+            let buffer = await fs.promises.readFileSync(input);
             let originalEncoding = await languageEncoding(buffer);
             let stringDecoded = iconv.decode(buffer, originalEncoding.encoding);
             let bufferEncoded = iconv.encode(stringDecoded, params.toCharset);
@@ -46,7 +46,7 @@ module.exports = class {
     }
 
     static async getEncoding(src) {
-        var buffer = fs.readFileSync(src);
+        var buffer = await fs.promises.readFile(src);
         var originalEncoding = await languageEncoding(buffer);
         return originalEncoding;
     }

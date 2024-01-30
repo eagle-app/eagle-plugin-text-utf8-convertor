@@ -12,7 +12,7 @@
         "dialog": {
             "exit": {
                 "title": "プラグインを終了しますか？",
-                "description": "終了すると、タスクが停止します。未完成の圧縮画像は圧縮されません。",
+                "description": "終了後、タスクは停止します。未完成のトランスコーディングテキストファイルはもはや変換されません。",
                 "cancel": "キャンセル",
                 "ok": "終了を確認"
             }
@@ -23,46 +23,34 @@
             "thead": {
                 "name": "ファイル名",
                 "ext": "形式",
-                "size": "元のサイズ",
-                "convertedSize": "圧縮後のサイズ"
+                "encoding": "元のコード",
+                "content": "元の内容",
+                "convertedContent": "エンコード後の内容"
             },
             "contextMenu": {
                 "deleteSuccessful": "削除済み"
             }
         },
         "empty": {
-            "title": "画像を追加",
-            "content": "まずEagleから画像を追加して、圧縮してください。bmp / jpg / png / webp / avif がサポートされています。"
+            "title": "テキストファイルを追加",
+            "content": "Eagleでテキストファイルを追加してから、変換を行ってください。"
         },
         "process": {
-            "completed": "変換完了、成功: {{success}}、失敗: {{failed}}。Eagleで他の画像を選択して続けることができます。"
-        },
-        "setting": {
-            "title": "圧縮設定",
-            "format": "形式",
-            "algorithm": "アルゴリズム",
-            "quality": "品質",
-            "lossy": "有効",
-            "noLossy": "無効",
-            "save": "設定を保存"
+            "completed": "変換が完了しました。成功: {{success}}、失敗: {{failed}}。Eagleで他のテキストファイルを選択して続行できます。"
         },
         "dialog": {
             "success": {
-                "title": "圧縮完了！",
-                "description": "<span style='color: var(--color-positive)'>{{ count }}</span> 枚の画像を圧縮しました。Eagleで他の画像を選択して続けることができます。",
+                "title": "変換完了！",
+                "description": "<span style='color: var(--color-positive)'>{{ count }}</span> 個のテキストファイルを変換しました。Eagleで他のテキストファイルを選択して変換を続けることができます。",
                 "cancel": "閉じる",
                 "ok": "確認"
             }
         }
     },
     "footer": {
-        "setting": {
-            "title": "圧縮設定",
-            "hint": "ここをクリックして圧縮設定を行う"
-        },
         "convert": {
-            "isConverting": "圧縮中...",
-            "title": "画像を圧縮"
+            "isConverting": "変換中...",
+            "title": "エンコードの変更"
         }
     },
     "component": {
@@ -73,17 +61,6 @@
     "error": {
         "equalExtension": "拡張子が同じ",
 
-        "imageLoadError": "画像の読み込みエラー",
-
-        "fileExtensionNotSupported": "サポートされていない画像形式",
-
-        "fileSizeNotSupported": "ファイルサイズがサポートされていない",
-        "resolutionNotSupported": "画像サイズが制限を超えています",
-
-        "fileResolutionIsNotEqual": "ファイルの解像度が一致していません",
-        "fileHistogramsAbnormality": "ファイルのヒストグラムが異常",
-        "fileSizeAbnormality": "ファイルサイズが異常",
-
-        "failedToFetch": "ファイルアクセスに失敗"
+        "fileExtensionNotSupported": "サポートされていないテキストファイル形式"
     }
 }
