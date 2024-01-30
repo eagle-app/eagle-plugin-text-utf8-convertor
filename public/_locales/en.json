@@ -1,7 +1,7 @@
 {
     "manifest": {
         "app": {
-            "name": "Encoder"
+            "name": "Text UTF8 Convertor"
         }
     },
     "header": {
