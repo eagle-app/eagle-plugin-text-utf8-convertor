@@ -37,21 +37,21 @@ export default class {
     async processData() {
         // async queue process convert task
         const async = require('async');
-        const queue = async.queue(async (task, callback) => {
+        const queue = async.queue(async (task) => {
             try {
                 await determineFileExtension(task.ext);
-                const convertBuffer = await Encoder.encode({
+                task.convertBuffer = await Encoder.encode({
                     src: task.filePath,
                     toCharset: 'UTF-8'
-                });
-                task.convertContent = convertBuffer.toString("utf-8").substring(0, 20);
+                });                
+                task.convertContent = task.convertBuffer.toString("utf-8").substring(0, 20);
                 task.encoding = await Encoder.getEncoding(task.filePath);
                 task.content = (await fs.promises.readFile(task.filePath)).toString("utf-8").substring(0, 20);
                 setTimeout(() => {
-                    callback();
+                    return;
                 }, 100);
             } catch (error) {
-                callback(error);
+                throw error;
             }
         }, 1);
         queue.drain(() => {
@@ -70,8 +70,8 @@ export default class {
                 eagle.log.info(`start encoding #${task.id} : ${task.name}.${task.ext}`);
                 this.currentProcessIndex++;
                 try {
-                    
                     await determineFileExtension(task.ext);
+
 
                     if (task.encoding.encoding === 'UTF-8') {
                         return null;
@@ -84,17 +84,17 @@ export default class {
 
                     const outputFilePath = require('path').normalize(
                         `${this.tempFolder}/${id}.${ext}`
-                    );
+                    );                    
 
-                    await fs.promises.writeFile(outputFilePath, task.convertContent);
+                    fs.writeFileSync(outputFilePath, task.convertBuffer);
 
                     if (!fs.existsSync(outputFilePath)) {
-                        throw "File not found, output error";
+                        throw "File not found, output error", "fileNotFound";
                     }
 
                     let convertedEncoding = await Encoder.getEncoding(outputFilePath);
                     if (convertedEncoding.encoding !== "UTF-8") {
-                        throw "Encoding error";
+                        throw "Encoding error", "encodingError";
                     }
 
                     const item = await eagle.item.getById(task.id);
@@ -117,6 +117,7 @@ export default class {
         return Encoder.getEncoding(src);
     }
 }
+
 
 async function determineFileExtension(ext){
     if (
