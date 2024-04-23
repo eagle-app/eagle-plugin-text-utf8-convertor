@@ -1,6 +1,6 @@
 {
-    "id": "4ab1b03c-29f2-415c-ac90-0d764f108359",
-    "version": "1.0.2",
+    "id": "text-utf8-convertor",
+    "version": "1.0.0",
     "platform": "all",
     "arch": "all",
     "name": "{{manifest.app.name}}",

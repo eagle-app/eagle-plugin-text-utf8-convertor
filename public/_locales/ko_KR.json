@@ -1,7 +1,7 @@
 {
     "manifest": {
         "app": {
-            "name": "이미지 일괄 압축"
+            "name": "텍스트 UTF8 변환기"
         }
     },
     "header": {

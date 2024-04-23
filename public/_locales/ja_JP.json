@@ -1,7 +1,7 @@
 {
     "manifest": {
         "app": {
-            "name": "画像一括圧縮"
+            "name": "テキストUTF8コンバーター"
         }
     },
     "header": {

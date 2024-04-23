@@ -1,7 +1,7 @@
 {
     "manifest": {
         "app": {
-            "name": "Compresión de Imágenes con un Solo Clic"
+            "name": "Convertidor de Texto a UTF8"
         }
     },
     "header": {

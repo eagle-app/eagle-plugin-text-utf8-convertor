@@ -1,7 +1,7 @@
 {
     "manifest": {
         "app": {
-            "name": "一键编码转换"
+            "name": "批量文件 UTF8 编码转换器"
         }
     },
     "header": {
