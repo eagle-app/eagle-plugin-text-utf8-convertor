@@ -61,7 +61,7 @@ eagle.onPluginRun(async () => {
   await main.processData();
 });
 
-const onDrop = (files) => {
+const onDrop = async (files) => {
   for (let i = 0; i < files.length; i++) {
     const file = files[i];
 
@@ -70,10 +70,23 @@ const onDrop = (files) => {
     main.taskQueue.enqueue({
       id: /(?<=\images[\\\/])(.*?)(?=\.info)/g.exec(file.path)[0],
       name: file.name,
-      ext: file.type.split("/")[1],
+      ext: require("path").parse(file.name).ext.split(".")[1],
       size: file.size,
       filePath: file.path,      
     });
+
+    main.taskQueue.data.forEach(async (task) => {
+        task.encoding = {};
+        task.encoding.encoding = "";
+        task.convertContent = "";
+        task.content = "";
+    });
+
+    main.isLoading = false;
+
+    if (eagle.app.platform === "darwin") await utils.time.sleep(600);
+
+    await main.processData();
   }
 };
 
