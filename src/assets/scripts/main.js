@@ -22,7 +22,11 @@ export default class {
 
     async loadData() {
         this.isLoading = true;
-        const items = await eagle.item.getSelected();
+        let items = await eagle.item.getSelected();
+        const acceptExts = ['txt', 'json', 'csv', 'md', 'html', 'xml', 'log', 'conf', 'config', 'ini', 'yaml'];
+        items = items.filter((item) => {
+            return acceptExts.includes(item.ext);
+        });
         this.taskQueue.enqueue(items);
         this.taskQueue.data.forEach(async (task) => {
             task.encoding = {};
@@ -120,10 +124,8 @@ export default class {
 
 
 async function determineFileExtension(ext){
-    if (
-        !['txt'].includes(
-            ext.toLowerCase()
-        )
-    )
+    const acceptExts = ['txt', 'json', 'csv', 'md', 'html', 'xml', 'log', 'conf', 'config', 'ini', 'yaml'];
+    if (!acceptExts.includes(ext.toLowerCase())) {
         throw 'file extension not supported';
+    }
 }
