@@ -10,23 +10,6 @@ module.exports = class {
 
         try {
             let input = params.src;
-
-            // NOTE: 好幾個 exe 不支援中文路徑，目前暫時針對 Windows 平台將輸入檔案先複製到系統 temp，以此做為路徑添加
-            if (process.platform === 'win32') {
-                const tempPath = path.normalize(
-                    require('os').tmpdir() + '/' + Math.random().toString(36).substring(2) + '.' + params.ext
-                );
-                await fs.promises.copyFile(params.src, tempPath);
-                input = tempPath;
-                removeInput = async () => {
-                    if (process.platform === 'win32' && input !== params.src) {
-                        if (fs.existsSync(input)) {
-                            await fs.promises.rm(input);
-                        }
-                    }
-                };
-            }
-
             eagle.log.info('convert txt Path:' + input);
 
             let buffer = await fs.promises.readFile(input);
@@ -52,6 +35,6 @@ module.exports = class {
     }
 
     static async createTempFolder() {
-        await createFolder("temp");
+        await createFolder(eagle.plugin.path + "/temp");
     }
 }
