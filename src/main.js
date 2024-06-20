@@ -9,15 +9,20 @@ import '@styles/main.scss';
 
 const app = createApp(App);
 
-const utils = require(`${__dirname}/modules/utils`);
-
 app.use(VueTippy);
 app.use(VueMousetrapPlugin).provide('mousetrap', app.config.globalProperties.$mousetrap);
 
-eagle.onPluginCreate(async () => {
-    // if (eagle.app.platform === 'darwin') await utils.time.sleep(600);
-    // coding here
-    // await eagle.window.setOpacity(1);
+eagle.onPluginCreate(async (plugin) => {
+    const utils = require(`${plugin.path}/modules/utils`);
+    window.addEventListener('load', async () => {
+        await utils.file.deleteFolder(`${plugin.path}/temp`);
+        await utils.file.createFolder(`${plugin.path}/temp`);
+    });
+
+    window.addEventListener('unload', async () => {
+        await utils.file.deleteFolder(`${plugin.path}/temp`);
+    });
+
     app.mount('#app');
 
     toggleTheme();
@@ -48,12 +53,3 @@ async function toggleTheme() {
     await nextTick();
     htmlEl.classList.remove('no-transition');
 }
-
-window.addEventListener('load', async () => {
-    await utils.file.deleteFolder(`${__dirname}/temp`);
-    await utils.file.createFolder(`${__dirname}/temp`);
-});
-
-window.addEventListener('unload', async () => {
-    await utils.file.deleteFolder(`${__dirname}/temp`);
-});
